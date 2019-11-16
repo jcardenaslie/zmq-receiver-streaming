@@ -1,6 +1,5 @@
-# USAGE
-# python app.py --montageW 2 --montageH 2
-# import the necessary packages
+# python server.py --montageW 2 --montageH 2
+
 from imutils import build_montages
 from datetime import datetime
 import numpy as np
@@ -19,7 +18,7 @@ ap.add_argument("-mH", "--montageH", required=True, type=int,
 args = vars(ap.parse_args())
 
 # initialize the ImageHub object
-imageHub = imagezmq.ImageHub(REQ_REP = False)
+imageHub = imagezmq.ImageHub()
 
 # initialize the dictionary which will contain  information regarding
 # when a device was last active, then store the last time the check
